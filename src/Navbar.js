@@ -1,24 +1,37 @@
 import React from 'react';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const NavigationBar = () => {
   return (
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand as={Link} to="/">GameZilla</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link as={Link} to="/App">Home</Nav.Link>
-          <Nav.Link as={Link} to="/Games">Games</Nav.Link>
-          <Nav.Link as={Link} to="/AboutUs">About Us</Nav.Link>
+    <Navbar bg="dark" variant="dark">
+      <Container fluid className="d-flex justify-content-between align-items-center">
+        <Navbar.Brand as={Link} to="/" className="mr-auto">
+          GameZilla
+        </Navbar.Brand>
+        <Nav className="ml-auto">
+          <Nav.Link as={Link} to="/App" className="nav-link-custom">
+            Home
+          </Nav.Link>
+          <Nav.Link as={Link} to="/Games" className="nav-link-custom">
+            Games
+          </Nav.Link>
+          <Nav.Link as={Link} to="/AboutUs" className="nav-link-custom">
+            About Us
+          </Nav.Link>
         </Nav>
-        <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-primary">Search</Button>
-        </Form>
-        <Button variant="success" className="ml-2">Add to Cart</Button>
-      </Navbar.Collapse>
+        <div className="d-flex">
+          <Form inline className="mr-2 p-3">
+            <FormControl
+              type="text"
+              placeholder="Search"
+              className="mr-sm-2 search-input"
+            />
+            <Button variant="outline-light">Search</Button>
+          </Form>
+          <Button variant="success">Add to Cart</Button>
+        </div>
+      </Container>
     </Navbar>
   );
 }
