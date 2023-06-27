@@ -15,7 +15,7 @@ function App() {
       <Router>
         <NavigationBar />
         <Routes>
-          <Route path="/Games.js" element={<Games />} />
+          <Route path="/games" element={<Games />} />
           {/* Add more routes as needed */}
         </Routes>
       </Router>
@@ -56,7 +56,9 @@ function App() {
         <Col>
           <Card className="h-100 dark-background">
             <Card.Body>
-              {/* Content for the second column */}
+              <Card.Text className="p-4">
+                Welcome to our website! We aim to provide you with the best gaming experience. Explore our collection of games and discover new adventures. Have fun and enjoy your stay!
+              </Card.Text>
             </Card.Body>
           </Card>
         </Col>
