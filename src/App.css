@@ -28,6 +28,11 @@
   color: #61dafb;
 }
 
+.dark-background {
+  background-color: #0c0d0e; /* Replace with your desired dark background color */
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
