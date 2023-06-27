@@ -17,7 +17,7 @@ function App() {
         </Routes>
       </Router>
       <Row>
-        <Col>
+        <Col className="dark-background">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <Alert variant="primary">Le button</Alert>
@@ -27,8 +27,15 @@ function App() {
             </p>
           </header>
         </Col>
-        <Col>
-          {/* Content for the second column */}
+        <Col className="dark-background">
+        <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <Alert variant="primary">Le button</Alert>
+            <Button>Test Button</Button>
+            <p>
+              Edit <code>src/App.js</code> and save to reload.
+            </p>
+          </header>
         </Col>
       </Row>
     </div>
