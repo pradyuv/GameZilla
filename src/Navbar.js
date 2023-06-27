@@ -10,14 +10,20 @@ const NavigationBar = () => {
           GameZilla
         </Navbar.Brand>
         <Nav className="ml-auto">
-          <Nav.Link as={Link} to="/App" className="nav-link-custom">
+          <Nav.Link id='navbar-first-item' href='/App'>
             Home
           </Nav.Link>
-          <Nav.Link as={Link} to="/Games" className="nav-link-custom">
+          <Nav.Link id='navbar-item' href='/Games'>
             Games
           </Nav.Link>
-          <Nav.Link as={Link} to="/AboutUs" className="nav-link-custom">
+          <Nav.Link id='navbar-item' href='/AboutUs'>
             About Us
+          </Nav.Link>
+          <Nav.Link id='navbar-item' href='/Genres'>
+            Genres
+          </Nav.Link>
+          <Nav.Link id='navbar-item' href='/Platforms'>
+            Platforms
           </Nav.Link>
         </Nav>
         <div className="d-flex">

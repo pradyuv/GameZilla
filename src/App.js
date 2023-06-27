@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavigationBar from './Navbar';
 import Games from './Games';
 import Footer from './Footer';
+import AboutUs from './AboutUs';
+
 
 import logo1 from './images/firstcarousel.jpg';
 import logo2 from './images/secondcarousel.jpg';
@@ -16,7 +18,9 @@ function App() {
       <Router>
         <NavigationBar />
         <Routes>
+          <Route path='/' element={import.meta.url} />
           <Route path="/games" element={<Games />} />
+          <Route path="/aboutus" element={<AboutUs/>} />
           {/* Add more routes as needed */}
         </Routes>
       </Router>
