@@ -13,6 +13,11 @@
   }
 }
 
+.carousel-container {
+  height: 300px; /* Adjust the height as per your requirement */
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
