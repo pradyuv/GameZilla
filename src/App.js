@@ -26,12 +26,21 @@ function App() {
               <Carousel>
                 <Carousel.Item>
                   <img className="d-block w-100" src={logo1} alt="Slide 1" />
+                  <Carousel.Caption>
+                    <h3>Diablo 4</h3>
+                  </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                   <img className="d-block w-100" src={logo2} alt="Slide 2" />
+                  <Carousel.Caption>
+                    <h3>Destiny 2: Lightfall</h3>
+                  </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                   <img className="d-block w-100" src={logo3} alt="Slide 3" />
+                  <Carousel.Caption>
+                    <h3>Elden Ring</h3>
+                  </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
               <div className="text-center">
