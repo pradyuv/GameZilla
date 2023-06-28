@@ -8,6 +8,7 @@ import Genres from './Genres';
 import Platforms from './Platforms';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Home';
+import ThisGame from './ThisGame';
 
 
 function App() {
@@ -18,8 +19,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/games" element={<Games />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/genres" element={<Genres />} />
-          <Route path="/platforms" element={<Platforms />} />
+          {/* <Route path="/genres" element={<Genres />} />
+          <Route path="/platforms" element={<Platforms />} /> */}
+          <Route exact path={"/thisgame"} component={<ThisGame/>}></Route>
         </Routes>
       </Router>
     </div>
