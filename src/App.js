@@ -1,11 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavigationBar from './Navbar';
 import Games from './Games';
-import Footer from './Footer';
 import AboutUs from './AboutUs';
-import Genres from './Genres';
-import Platforms from './Platforms';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Home';
 import ThisGame from './ThisGame';
