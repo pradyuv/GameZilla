@@ -1,23 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 import NavigationBar from './Navbar';
 import Footer from './Footer';
-import { FaShoppingCart } from 'react-icons/fa'; // Import the shopping cart icon from the FontAwesome icon library
+import { FaShoppingCart } from 'react-icons/fa';
+import gamesData from './games.json';
 
 function ThisGame() {
   const location = useLocation();
   const { name, imagePath } = location.state || {};
 
-  // Can customize the description and price for each game
-  const description = 'This is a generic description for the game.';
-  const price = '$49.99';
-  if (!name || !imagePath) {
-    // Handle the case when location.state is null or missing properties
-    alert("Game information not sent properly!");
-    console.log('name:', name);
-    console.log('imagePath:', imagePath);
-  }
+  const [gameInfo, setGameInfo] = useState(null);
+
+  useEffect(() => {
+    if (!name || !imagePath) {
+      // Handle the case when location.state is null or missing properties
+      alert("Game information not sent properly!");
+      console.log('name:', name);
+      console.log('imagePath:', imagePath);
+    } else {
+      const game = gamesData.games.find(game => game.name === name);
+      if (game) {
+        setGameInfo(game);
+      } else {
+        alert("Game not found in the database!");
+      }
+    }
+  }, [name, imagePath]);
+
+  const { description, price, imagePath: gameImagePath } = gameInfo || {};
 
   return (
     <div className="bg-dark">
@@ -28,7 +39,7 @@ function ThisGame() {
           <Col>
             <Card className="bg-dark">
               <Card.Body className="d-flex flex-column align-items-center">
-                <Card.Img src={imagePath} alt={name}/>
+                <Card.Img src={gameImagePath || imagePath} alt={name} />
               </Card.Body>
             </Card>
           </Col>
