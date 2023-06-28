@@ -13,7 +13,7 @@ function Home() {
     <div className="bg-dark">
       <NavigationBar />
       <Container fluid className="vh-100 d-flex flex-column">
-        <h1 className="text-white align-self-start mx-auto pt-3">GameZilla</h1> {/* Added align-self-start class and pt-3 class */}
+        <h1 className="text-white align-self-start mx-auto pt-3">GameZilla</h1>
         <Row className="flex-grow-1 overflow-auto">
           <Col>
             <Card className="bg-dark">
@@ -22,12 +22,24 @@ function Home() {
                   <Carousel>
                     <Carousel.Item>
                       <img className="d-block w-100" src={logo1} alt="Slide 1" />
+                      <Carousel.Caption>
+                        <h3>Diablo IV</h3>
+                        <p>Revisit Sanctuary!</p>
+                      </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                       <img className="d-block w-100" src={logo2} alt="Slide 2" />
+                      <Carousel.Caption>
+                        <h3>Destiny 2: Lightfall</h3>
+                        <p>Explore Neomuna!</p>
+                      </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                       <img className="d-block w-100" src={logo3} alt="Slide 3" />
+                      <Carousel.Caption>
+                        <h3>Elden Ring</h3>
+                        <p>A legendary world...</p>
+                      </Carousel.Caption>
                     </Carousel.Item>
                   </Carousel>
                 </div>
