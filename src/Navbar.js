@@ -25,21 +25,29 @@ const NavigationBar = () => {
             About Us
           </Nav.Link>
           <NavDropdown title="Genres" id="navbar-dropdown" className='text-white'>
-            <NavDropdown.Item href="/option1">Option 1</NavDropdown.Item>
-            <NavDropdown.Item href="/option2">Option 2</NavDropdown.Item>
-            <NavDropdown.Item href="/option3">Option 3</NavDropdown.Item>
+            <NavDropdown.Item href="/option1">Action RPG</NavDropdown.Item>
+            <NavDropdown.Item href="/option2">Open World</NavDropdown.Item>
+            <NavDropdown.Item href="/option3">FPS</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Platforms" id="navbar-dropdown" className='text-white'>
-            <NavDropdown.Item href="/option1">Option 1</NavDropdown.Item>
-            <NavDropdown.Item href="/option2">Option 2</NavDropdown.Item>
-            <NavDropdown.Item href="/option3">Option 3</NavDropdown.Item>
+            <NavDropdown.Item href="/option1">PC</NavDropdown.Item>
+            <NavDropdown.Item href="/option2">PS5</NavDropdown.Item>
+            <NavDropdown.Item href="/option3">Xbox Series X</NavDropdown.Item>
           </NavDropdown>
         </Nav>
         <div className="d-flex">
-          <input className="form-control mr-5" type="text" placeholder="Search" aria-label="Search" />
-        <MDBBtn gradient="white" rounded size="sm" type="submit" className="mr-auto">
-          Search
-        </MDBBtn>
+          <Form inline className="mr-2 p-3">
+            <div className="position-relative">
+              <FormControl
+                type="text"
+                placeholder="Search"
+                className="mr-sm-2 search-input"
+              />
+              <Button variant="outline-light" className="search-button">
+                <IoMdSearch size={20} />
+              </Button>
+            </div>
+          </Form>
           <Button variant="success" className='mt-3' style={{ padding: '8px', width: '40px', height: '40px' }}>
             <FaShoppingCart size={20} />
           </Button>
