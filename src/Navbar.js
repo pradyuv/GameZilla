@@ -1,6 +1,8 @@
 import React from 'react';
 import { Navbar, Nav, Form, FormControl, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { IoMdSearch } from 'react-icons/io'; // Import the search icon from the Ionicons icon library
+import { FaShoppingCart } from 'react-icons/fa'; // Import the shopping cart icon from the FontAwesome icon library
 
 const NavigationBar = () => {
   return (
@@ -28,14 +30,20 @@ const NavigationBar = () => {
         </Nav>
         <div className="d-flex">
           <Form inline className="mr-2 p-3">
-            <FormControl
-              type="text"
-              placeholder="Search"
-              className="mr-sm-2 search-input"
-            />
-            <Button variant="outline-light">Search</Button>
+            <div className="position-relative">
+              <FormControl
+                type="text"
+                placeholder="Search"
+                className="mr-sm-2 search-input"
+              />
+              <Button variant="outline-light" className="search-button">
+                <IoMdSearch size={20} />
+              </Button>
+            </div>
           </Form>
-          <Button variant="success">Add to Cart</Button>
+          <Button variant="success" style={{ padding: '8px', width: '40px', height: '40px' }}>
+            <FaShoppingCart size={20} />
+          </Button>
         </div>
       </Container>
     </Navbar>
