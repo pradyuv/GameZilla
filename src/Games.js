@@ -17,7 +17,7 @@ function Games() {
           <h2 className="text-white text-center mb-4 pt-3">Featured Games</h2>
           <Row>
             <Col md={4}>
-              <Link to={{ pathname: '/thisgame', state: { name: 'Diablo IV', imagePath: logo1 } }}>
+            <Link to='/thisgame' state={{name:'Diablo IV', imagePath: logo1}}>
                 <Card className="bg-dark text-white">
                   <Card.Img src={logo1} alt="Diablo IV" />
                   <Card.ImgOverlay className="d-flex flex-column justify-content-end">
@@ -27,7 +27,7 @@ function Games() {
               </Link>
             </Col>
             <Col md={4}>
-              <Link to={{ pathname: '/thisgame', state: { name: 'Destiny 2: Lightfall', imagePath: logo2 } }}>
+            <Link to='/thisgame' state={{name:'Destiny 2: Lightfall', imagePath: logo2}}>
                 <Card className="bg-dark text-white">
                   <Card.Img src={logo2} alt="Destiny 2: Lightfall" />
                   <Card.ImgOverlay className="d-flex flex-column justify-content-end">
@@ -37,7 +37,7 @@ function Games() {
               </Link>
             </Col>
             <Col md={4}>
-              <Link to={{ pathname: '/thisgame', state: { name: 'Elden Ring', imagePath: logo3 } }}>
+            <Link to='/thisgame' state={{name:'Elden Ring', imagePath: logo3}}>
                 <Card className="bg-dark text-white">
                   <Card.Img src={logo3} alt="Elden Ring" />
                   <Card.ImgOverlay className="d-flex flex-column justify-content-end">
