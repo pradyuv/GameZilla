@@ -3,7 +3,6 @@ import { Navbar, Nav, Form, FormControl, Button, Container, NavDropdown } from '
 import { Link } from 'react-router-dom';
 import { IoMdSearch } from 'react-icons/io'; // Import the search icon from the Ionicons icon library
 import { FaShoppingCart } from 'react-icons/fa'; // Import the shopping cart icon from the FontAwesome icon library
-import { MDBCol, MDBFormInline, MDBBtn } from "mdbreact";
 import './Navbar.css'
 
 const NavigationBar = () => {
