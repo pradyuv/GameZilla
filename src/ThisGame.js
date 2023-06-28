@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Form, Alert } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import NavigationBar from './Navbar';
 import Footer from './Footer';
@@ -12,6 +12,7 @@ function ThisGame() {
   const { name, imagePath } = location.state || {};
 
   const [gameInfo, setGameInfo] = useState(null);
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     if (!name || !imagePath) {
@@ -20,7 +21,7 @@ function ThisGame() {
       console.log('imagePath:', imagePath);
       alert("Game information not passed correctly");
     } else {
-      const game = gamesData.games.find(game => game.name === name);
+      const game = gamesData.games.find((game) => game.name === name);
       if (game) {
         setGameInfo(game);
       } else {
@@ -34,7 +35,11 @@ function ThisGame() {
   const handleReviewSubmit = (event) => {
     event.preventDefault();
     // Perform review submission logic
-    navigate('/');
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+      navigate('/');
+    }, 3000);
   };
 
   return (
@@ -61,7 +66,7 @@ function ThisGame() {
                     Price: {price}
                   </Card.Text>
                 </div>
-                <Button variant="success" className='mt-3' style={{ padding: '8px', width: '40px', height: '40px' }}>
+                <Button variant="success" className="mt-3" style={{ padding: '8px', width: '40px', height: '40px' }}>
                   <FaShoppingCart size={20} />
                 </Button>
                 <Form className="mt-4" onSubmit={handleReviewSubmit}>
@@ -73,6 +78,11 @@ function ThisGame() {
                     <Button variant="primary" type="submit">Submit</Button>
                   </div>
                 </Form>
+                {showAlert && (
+                  <Alert variant="success" className="mt-4">
+                    Thank you for your review!
+                  </Alert>
+                )}
               </Card.Body>
             </Card>
           </Col>
