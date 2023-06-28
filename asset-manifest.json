@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.48273c7e.css",
+    "main.js": "/static/js/main.b0a6544b.js",
+    "static/js/787.a588d229.chunk.js": "/static/js/787.a588d229.chunk.js",
+    "static/media/thirdcarousel.jpg": "/static/media/thirdcarousel.da1c63d5caa4d85e0eee.jpg",
+    "static/media/secondcarousel.jpg": "/static/media/secondcarousel.0915f7b33403ad6ce4ec.jpg",
+    "static/media/GameZillalogo.jpg": "/static/media/GameZillalogo.fd79d8d08a54e3540270.jpg",
+    "static/media/firstcarousel.jpg": "/static/media/firstcarousel.11a288305d22d0635d46.jpg",
+    "index.html": "/index.html",
+    "main.48273c7e.css.map": "/static/css/main.48273c7e.css.map",
+    "main.b0a6544b.js.map": "/static/js/main.b0a6544b.js.map",
+    "787.a588d229.chunk.js.map": "/static/js/787.a588d229.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.48273c7e.css",
+    "static/js/main.b0a6544b.js"
+  ]
+}
