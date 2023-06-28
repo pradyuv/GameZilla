@@ -12,7 +12,7 @@ function Games() {
     <>
       <NavigationBar />
       <div className="bg-dark">
-        <Container className="py-4">
+        <Container fluid className="vh-100 d-flex flex-column">
           <h2 className="text-white text-center mb-4">Featured Games</h2>
           <Row>
             <Col md={4}>

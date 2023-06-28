@@ -1,13 +1,8 @@
 import React from 'react';
 import { Button, Container, Row, Col, Carousel, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavigationBar from './Navbar';
-import Games from './Games';
 import Footer from './Footer';
-import AboutUs from './AboutUs';
-import Genres from './Genres';
-import Platforms from './Platforms';
 
 import logo1 from './images/firstcarousel.jpg';
 import logo2 from './images/secondcarousel.jpg';
@@ -15,7 +10,7 @@ import logo3 from './images/thirdcarousel.jpg';
 
 function Home() {
   return (
-    <div className="App bg-dark">
+    <div className="bg-dark">
       <NavigationBar />
       <Container fluid className="vh-100 d-flex flex-column">
         <Row className="flex-grow-1 overflow-auto">
