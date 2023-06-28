@@ -1,0 +1,23 @@
+{
+    "games": [
+      {
+        "name": "Diablo IV",
+        "description": "Diablo IV is an upcoming action role-playing game developed and published by Blizzard Entertainment.",
+        "price": "$59.99",
+        "imagePath": "./images/firstcarousel.jpg"
+      },
+      {
+        "name": "Destiny 2: Lightfall",
+        "description": "Destiny 2: Lightfall is the next expansion in the popular multiplayer first-person shooter game Destiny 2.",
+        "price": "$39.99",
+        "imagePath": "images/secondcarousel.jpg"
+      },
+      {
+        "name": "Elden Ring",
+        "description": "Elden Ring is an upcoming action role-playing game developed by FromSoftware and published by Bandai Namco Entertainment.",
+        "price": "$49.99",
+        "imagePath": "images/thirdcarousel.jpg"
+      }
+    ]
+  }
+  
