@@ -6,7 +6,7 @@ import Footer from './Footer';
 
 function ThisGame() {
   const location = useLocation();
-  const { name, imagePath } = location.state;
+  const { name, imagePath } = location.state || {};
 
   // You can customize the description and price for each game
   const description = 'This is a generic description for the game.';
@@ -18,15 +18,15 @@ function ThisGame() {
       <div className="bg-dark">
         <Container fluid className="vh-100 d-flex flex-column">
           <h2 className="text-white text-center mb-4 pt-3">Game Details</h2>
-          <Row>
-            <Col md={12} className="text-center">
+          <Row className="justify-content-center align-items-center">
+            <Col md={6} className="text-center">
               <Card className="bg-dark text-white">
                 <Card.Img src={imagePath} alt={name} />
-                <Card.ImgOverlay className="d-flex flex-column justify-content-end">
+                <Card.Body>
                   <Card.Title>{name}</Card.Title>
                   <Card.Text>{description}</Card.Text>
                   <Card.Text>Price: {price}</Card.Text>
-                </Card.ImgOverlay>
+                </Card.Body>
               </Card>
             </Col>
           </Row>

@@ -21,7 +21,7 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           {/* <Route path="/genres" element={<Genres />} />
           <Route path="/platforms" element={<Platforms />} /> */}
-          <Route exact path={"/thisgame"} component={<ThisGame/>}></Route>
+          <Route exact path={"/thisgame"} element={<ThisGame/>}></Route>
         </Routes>
       </Router>
     </div>
