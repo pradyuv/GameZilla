@@ -13,7 +13,7 @@ function Games() {
       <NavigationBar />
       <div className="bg-dark">
         <Container fluid className="vh-100 d-flex flex-column">
-          <h2 className="text-white text-center mb-4">Featured Games</h2>
+          <h2 className="text-white text-center mb-4 pt-3">Featured Games</h2>
           <Row>
             <Col md={4}>
               <Card className="bg-dark text-white">

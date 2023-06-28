@@ -13,6 +13,7 @@ function Home() {
     <div className="bg-dark">
       <NavigationBar />
       <Container fluid className="vh-100 d-flex flex-column">
+        <h1 className="text-white align-self-start mx-auto pt-3">GameZilla</h1> {/* Added align-self-start class and pt-3 class */}
         <Row className="flex-grow-1 overflow-auto">
           <Col>
             <Card className="bg-dark">
