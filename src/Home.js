@@ -4,9 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationBar from './Navbar';
 import Footer from './Footer';
 
-import logo1 from './images/firstcarousel.jpg';
-import logo2 from './images/secondcarousel.jpg';
-import logo3 from './images/thirdcarousel.jpg';
 
 function Home() {
   return (
@@ -21,21 +18,21 @@ function Home() {
                 <div className="carousel-container">
                   <Carousel>
                     <Carousel.Item>
-                      <img className="d-block w-100" src={logo1} alt="Slide 1" />
+                      <img className="d-block w-100" src="images/firstcarousel.jpg" alt="Slide 1" />
                       <Carousel.Caption>
                         <h3>Diablo IV</h3>
                         <p>Revisit Sanctuary!</p>
                       </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                      <img className="d-block w-100" src={logo2} alt="Slide 2" />
+                      <img className="d-block w-100" src="images/secondcarousel.jpg" alt="Slide 2" />
                       <Carousel.Caption>
                         <h3>Destiny 2: Lightfall</h3>
                         <p>Explore Neomuna!</p>
                       </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                      <img className="d-block w-100" src={logo3} alt="Slide 3" />
+                      <img className="d-block w-100" src="images/thirdcarousel.jpg" alt="Slide 3" />
                       <Carousel.Caption>
                         <h3>Elden Ring</h3>
                         <p>A legendary world...</p>

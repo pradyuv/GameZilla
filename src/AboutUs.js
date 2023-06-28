@@ -3,7 +3,6 @@ import { Button, Container, Row, Col, Carousel, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationBar from './Navbar';
 import Footer from './Footer';
-import GameZillaLogo from './images/GameZillalogo.jpg';
 
 
 
@@ -17,7 +16,7 @@ function AboutUs() {
             <Card className="bg-dark">
               <Card.Body className="d-flex flex-column align-items-center">
                 <div className="gamezilla-image-and-caption">
-                <img className="d-block w-100" src={GameZillaLogo} alt="GameZillaLogo" />
+                <img className="d-block w-100" src="images/GameZillalogo.jpg" alt="GameZillaLogo" />
                 </div>
               </Card.Body>
             </Card>

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { IoMdSearch } from 'react-icons/io'; // Import the search icon from the Ionicons icon library
 import { FaShoppingCart } from 'react-icons/fa'; // Import the shopping cart icon from the FontAwesome icon library
 import { MDBCol, MDBFormInline, MDBBtn } from "mdbreact";
-import logo from './images/GameZillalogo.jpg';
 import './Navbar.css'
 
 const NavigationBar = () => {
@@ -12,7 +11,7 @@ const NavigationBar = () => {
     <Navbar className='bg-black navbar-dark'>
       <Container fluid className="d-flex justify-content-between align-items-center ml-0">
         <Navbar.Brand as={Link} to="/" className="mr-auto">
-          <img className="logo-image" src={logo} alt="GameZilla Logo" style={{ width: '100px', height: '90px' }} /> {/* Added logo-image class and inline style */}
+          <img className="logo-image" src="images/GameZillalogo.jpg" alt="GameZilla Logo" style={{ width: '100px', height: '90px' }} /> {/* Added logo-image class and inline style */}
         </Navbar.Brand>
         <Nav className="ml-auto">
           <Nav.Link as={Link} to="/" id="navbar-first-item" className='text-white'>
