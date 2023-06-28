@@ -3,6 +3,7 @@ import { Navbar, Nav, Form, FormControl, Button, Container, NavDropdown } from '
 import { Link } from 'react-router-dom';
 import { IoMdSearch } from 'react-icons/io'; // Import the search icon from the Ionicons icon library
 import { FaShoppingCart } from 'react-icons/fa'; // Import the shopping cart icon from the FontAwesome icon library
+import { MDBCol, MDBFormInline, MDBBtn } from "mdbreact";
 import logo from './images/GameZillalogo.jpg';
 import './Navbar.css'
 
@@ -35,18 +36,10 @@ const NavigationBar = () => {
           </NavDropdown>
         </Nav>
         <div className="d-flex">
-          <Form inline className="mr-2 p-3">
-            <div className="position-relative">
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2 search-input"
-              />
-              <Button variant="outline-light" className="search-button">
-                <IoMdSearch size={20} />
-              </Button>
-            </div>
-          </Form>
+          <input className="form-control mr-5" type="text" placeholder="Search" aria-label="Search" />
+        <MDBBtn gradient="white" rounded size="sm" type="submit" className="mr-auto">
+          Search
+        </MDBBtn>
           <Button variant="success" className='mt-3' style={{ padding: '8px', width: '40px', height: '40px' }}>
             <FaShoppingCart size={20} />
           </Button>

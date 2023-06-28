@@ -68,3 +68,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+preliminary search bar:
+{/* <Form inline className="mr-2 p-3">
+            <div className="position-relative">
+              <FormControl
+                type="text"
+                placeholder="Search"
+                className="mr-sm-2 search-input"
+              />
+              <Button variant="outline-light" className="search-button">
+                <IoMdSearch size={20} />
+              </Button>
+            </div>
+          </Form> */}
