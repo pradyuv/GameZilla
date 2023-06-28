@@ -11,6 +11,13 @@ function ThisGame() {
   // You can customize the description and price for each game
   const description = 'This is a generic description for the game.';
   const price = '$49.99';
+  if (!name || !imagePath) {
+    // Handle the case when location.state is null or missing properties
+    alert("Game information not sent properly!");
+    console.log('name:', name);
+    console.log('imagePath:', imagePath);
+  }
+
 
   return (
     <>
