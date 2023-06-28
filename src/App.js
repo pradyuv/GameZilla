@@ -19,8 +19,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/games" element={<Games />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          {/* <Route path="/genres" element={<Genres />} />
-          <Route path="/platforms" element={<Platforms />} /> */}
           <Route exact path={"/thisgame"} element={<ThisGame/>}></Route>
         </Routes>
       </Router>
