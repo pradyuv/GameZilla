@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 import NavigationBar from './Navbar';
 import Footer from './Footer';
@@ -46,6 +46,15 @@ function ThisGame() {
                 <Button variant="success" className='mt-3' style={{ padding: '8px', width: '40px', height: '40px' }}>
                   <FaShoppingCart size={20} />
                 </Button>
+                <Form className="mt-4">
+                  <Form.Group controlId="reviewForm">
+                    <Form.Label>Leave a review:</Form.Label>
+                    <Form.Control as="textarea" rows={3} placeholder="Write your review here" />
+                  </Form.Group>
+                  <div className="text-center">
+                    <Button variant="primary" type="submit">Submit</Button>
+                  </div>
+                </Form>
               </Card.Body>
             </Card>
           </Col>
