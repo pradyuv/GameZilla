@@ -6,17 +6,24 @@ import Footer from './Footer';
 import gamesData from './games.json';
 
 function Games() {
-  const [selectedGenre, setSelectedGenre] = useState(null);
+  const [selectedGenres, setSelectedGenres] = useState([]);
 
   const handleGenreSelection = (genre) => {
-    setSelectedGenre(selectedGenre === genre ? null : genre);
+    if (selectedGenres.includes(genre)) {
+      setSelectedGenres(selectedGenres.filter((selectedGenre) => selectedGenre !== genre));
+    } else {
+      setSelectedGenres([...selectedGenres, genre]);
+    }
   };
 
   const renderGames = () => {
     let filteredGames = gamesData.games;
 
-    if (selectedGenre) {
-      filteredGames = filteredGames.filter((game) => game.genre === selectedGenre);
+    if (selectedGenres.length > 0) {
+      filteredGames = filteredGames.filter((game) => {
+        const gameGenres = game.genre.split(',').map((genre) => genre.trim());
+        return selectedGenres.some((selectedGenre) => gameGenres.includes(selectedGenre));
+      });
     }
 
     return filteredGames.map((game) => (
@@ -50,7 +57,7 @@ function Games() {
                     type="checkbox"
                     className="form-check-input"
                     id={genre}
-                    checked={selectedGenre === genre}
+                    checked={selectedGenres.includes(genre)}
                     onChange={() => handleGenreSelection(genre)}
                   />
                   <label className="form-check-label text-white" htmlFor={genre}>
