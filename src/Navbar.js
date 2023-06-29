@@ -34,7 +34,7 @@ const NavigationBar = () => {
           </NavDropdown>
         </Nav>
         <div className="d-flex">
-          <Form inline className="mr-2 p-3">
+          {/* <Form inline className="mr-2 p-3">
             <div className="position-relative">
               <FormControl
                 type="text"
@@ -45,7 +45,7 @@ const NavigationBar = () => {
                 <IoMdSearch size={20} />
               </Button>
             </div>
-          </Form>
+          </Form> */}
           <Button variant="success" className='mt-3' style={{ padding: '8px', width: '40px', height: '40px' }}>
             <FaShoppingCart size={20} />
           </Button>
