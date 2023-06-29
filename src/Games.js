@@ -1,12 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NavigationBar from './Navbar';
 import Footer from './Footer';
-
-
+import gamesData from './games.json';
 
 function Games() {
+  const [selectedGenre, setSelectedGenre] = useState(null);
+
+  const handleGenreSelection = (genre) => {
+    setSelectedGenre(selectedGenre === genre ? null : genre);
+  };
+
+  const renderGames = () => {
+    let filteredGames = gamesData.games;
+
+    if (selectedGenre) {
+      filteredGames = filteredGames.filter((game) => game.genre === selectedGenre);
+    }
+
+    return filteredGames.map((game) => (
+      <Col md={4} key={game.name}>
+        <Link to="/thisgame" state={{ name: game.name, imagePath: game.imagePath }}>
+          <Card className="bg-dark text-white">
+            <Card.Img src={game.imagePath} alt={game.name} />
+            <Card.ImgOverlay className="d-flex flex-column justify-content-end">
+              <Card.Title>{game.name}</Card.Title>
+            </Card.ImgOverlay>
+          </Card>
+        </Link>
+      </Col>
+    ));
+  };
+
+  const genres = ['Action RPG', 'FPS', 'Open World'];
+
   return (
     <>
       <NavigationBar />
@@ -14,35 +42,25 @@ function Games() {
         <Container fluid className="vh-100 d-flex flex-column">
           <h2 className="text-white text-center mb-4 pt-3">Featured Games</h2>
           <Row>
-            <Col md={4}>
-            <Link to='/thisgame' state={{name:'Diablo IV', imagePath: "images/firstcarousel.jpg"}}>
-                <Card className="bg-dark text-white">
-                  <Card.Img src="images/firstcarousel.jpg" alt="Diablo IV" />
-                  <Card.ImgOverlay className="d-flex flex-column justify-content-end">
-                    <Card.Title>Diablo IV</Card.Title>
-                  </Card.ImgOverlay>
-                </Card>
-              </Link>
+            <Col md={3}>
+              <h4 className="text-white">Genres:</h4>
+              {genres.map((genre) => (
+                <div key={genre} className="form-check">
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    id={genre}
+                    checked={selectedGenre === genre}
+                    onChange={() => handleGenreSelection(genre)}
+                  />
+                  <label className="form-check-label text-white" htmlFor={genre}>
+                    {genre}
+                  </label>
+                </div>
+              ))}
             </Col>
-            <Col md={4}>
-            <Link to='/thisgame' state={{name:'Destiny 2: Lightfall', imagePath: "images/secondcarousel.jpg"}}>
-                <Card className="bg-dark text-white">
-                  <Card.Img src="images/secondcarousel.jpg" alt="Destiny 2: Lightfall" />
-                  <Card.ImgOverlay className="d-flex flex-column justify-content-end">
-                    <Card.Title>Destiny 2: Lightfall</Card.Title>
-                  </Card.ImgOverlay>
-                </Card>
-              </Link>
-            </Col>
-            <Col md={4}>
-            <Link to='/thisgame' state={{name:'Elden Ring', imagePath: "images/thirdcarousel.jpg"}}>
-                <Card className="bg-dark text-white">
-                  <Card.Img src="images/thirdcarousel.jpg" alt="Elden Ring" />
-                  <Card.ImgOverlay className="d-flex flex-column justify-content-end">
-                    <Card.Title>Elden Ring</Card.Title>
-                  </Card.ImgOverlay>
-                </Card>
-              </Link>
+            <Col md={9}>
+              <Row>{renderGames()}</Row>
             </Col>
           </Row>
         </Container>
