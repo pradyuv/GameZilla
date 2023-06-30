@@ -3,30 +3,30 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NavigationBar from './Navbar';
 import Footer from './Footer';
-import gamesData from './games.json';
+import gamesData from './games.json'; //imported necessary modules
 
 function Games() {
-  const [selectedGenres, setSelectedGenres] = useState([]);
+  const [selectedGenres, setSelectedGenres] = useState([]); //set up states, selectedGenres array and setSelectedGenres func to update selected genres
 
-  const handleGenreSelection = (genre) => {
-    if (selectedGenres.includes(genre)) {
-      setSelectedGenres(selectedGenres.filter((selectedGenre) => selectedGenre !== genre));
+  const handleGenreSelection = (genre) => { // this function is called when a checkbox(s) for a genre are clicked, used onChange
+    if (selectedGenres.includes(genre)) { //checks if array has said genre
+      setSelectedGenres(selectedGenres.filter((selectedGenre) => selectedGenre !== genre)); //removes genre from array
     } else {
-      setSelectedGenres([...selectedGenres, genre]);
+      setSelectedGenres([...selectedGenres, genre]); //adds genre to to array using spread op
     }
   };
 
-  const renderGames = () => {
+  const renderGames = () => { //function to check for selected genres, then filter the filteredGames array 
     let filteredGames = gamesData.games;
 
     if (selectedGenres.length > 0) {
       filteredGames = filteredGames.filter((game) => {
-        const gameGenres = game.genre.split(',').map((genre) => genre.trim());
-        return selectedGenres.some((selectedGenre) => gameGenres.includes(selectedGenre));
+        const gameGenres = game.genre.split(',').map((genre) => genre.trim()); //split into individual genres
+        return selectedGenres.some((selectedGenre) => gameGenres.includes(selectedGenre)); //check if in array
       });
     }
 
-    return filteredGames.map((game) => (
+    return filteredGames.map((game) => ( //render the filtered genres
       <Col md={4} key={game.name}>
         <Link to="/thisgame" state={{ name: game.name, imagePath: game.imagePath }}>
           <Card className="bg-dark text-white">
