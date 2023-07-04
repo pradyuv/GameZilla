@@ -49,6 +49,13 @@
         "price": "$59.99",
         "imagePath": "/images/warhammer3.jpg",
         "genre":"Strategy"
+      },
+      {
+        "name": "Sid Meier's Civilization 6",
+        "description": "Civilization 6 is a critically acclaimed turn-based strategy game where players lead their civilization from ancient times to the modern era, building cities, conducting diplomacy, and striving for global domination.",
+        "price": "$49.99",
+        "imagePath": "/images/civ6.jpg",
+        "genre":"Strategy"
       }
       
 
