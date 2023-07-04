@@ -37,7 +37,7 @@ const Cart = () => {
     <div className="d-flex flex-column min-vh-100 bg-dark text-white">
       <NavigationBar />
       <div className="flex-grow-1 container">
-        <h2>Cart</h2>
+        <h2 className='text-white text-center mb-4 pt-3'>Cart</h2>
         {cartItems.length === 0 ? (
           <p>Your cart is empty.</p>
         ) : (
@@ -47,6 +47,7 @@ const Cart = () => {
                 <div key={index}>
                   <h4>{item.name}</h4>
                   <p>Quantity: {item.quantity}</p>
+                  <img src={item.imagePath} alt={item.name} style={{ width: '100px' }} />
                   <p>Price: {item.price}</p> {/* Display the item price directly */}
                   <button onClick={() => handleRemoveItem(index)}>Remove</button>
                 </div>
