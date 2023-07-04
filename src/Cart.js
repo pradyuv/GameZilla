@@ -22,8 +22,16 @@ const Cart = () => {
   };
 
   const getTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    const totalPrice = cartItems.reduce((total, item) => {
+      const priceWithoutSymbol = item.price.replace('$', ''); // Remove the dollar sign from the price
+      const parsedPrice = parseFloat(priceWithoutSymbol);
+      return total + parsedPrice * item.quantity;
+    }, 0);
+  
+    return totalPrice.toFixed(2); // Round the total price to 2 decimal places
   };
+  
+  
 
   return (
     <div className="d-flex flex-column min-vh-100 bg-dark text-white">
@@ -39,14 +47,14 @@ const Cart = () => {
                 <div key={index}>
                   <h4>{item.name}</h4>
                   <p>Quantity: {item.quantity}</p>
-                  <p>Price: {parseFloat(item.price)}</p> {/* Display the item price directly */}
+                  <p>Price: {item.price}</p> {/* Display the item price directly */}
                   <button onClick={() => handleRemoveItem(index)}>Remove</button>
                 </div>
               ))}
             </div>
             <div>
               <h4>Total Quantity: {getTotalQuantity()}</h4>
-              <h4>Total Price: {getTotalPrice()}</h4>
+              <h4>Total Price: ${getTotalPrice()}</h4>
             </div>
           </>
         )}
