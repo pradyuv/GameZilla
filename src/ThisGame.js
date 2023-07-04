@@ -16,7 +16,6 @@ function ThisGame() {
 
   useEffect(() => {
     if (!name || !imagePath) {
-      // Handle the case when location.state is null or missing properties
       console.log('name:', name);
       console.log('imagePath:', imagePath);
       alert("Game information not passed correctly");
@@ -34,12 +33,31 @@ function ThisGame() {
 
   const handleReviewSubmit = (event) => {
     event.preventDefault();
-    // Perform review submission logic
     setShowAlert(true);
     setTimeout(() => {
       setShowAlert(false);
       navigate('/');
     }, 3000);
+  };
+
+  const handleAddToCart = () => {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const existingItemIndex = cartItems.findIndex(item => item.name === gameInfo.name);
+
+    if (existingItemIndex !== -1) {
+      // If the item already exists in the cart, update the quantity
+      const updatedCartItems = [...cartItems];
+      updatedCartItems[existingItemIndex].quantity += 1;
+      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    } else {
+      // If the item doesn't exist in the cart, add it with a quantity of 1
+      const newItem = { ...gameInfo, quantity: 1 };
+      const updatedCartItems = [...cartItems, newItem];
+      localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    }
+
+    // Redirect to the Cart page with the selected game
+    navigate('/cart', { state: { selectedGame: gameInfo } });
   };
 
   return (
@@ -66,7 +84,12 @@ function ThisGame() {
                     Price: {price}
                   </Card.Text>
                 </div>
-                <Button variant="success" className="mt-3" style={{ padding: '8px', width: '40px', height: '40px' }}>
+                <Button
+                  variant="success"
+                  className="mt-3"
+                  style={{ padding: '8px', width: '40px', height: '40px' }}
+                  onClick={handleAddToCart}
+                >
                   <FaShoppingCart size={20} />
                 </Button>
                 <Form className="mt-4" onSubmit={handleReviewSubmit}>
@@ -76,13 +99,13 @@ function ThisGame() {
                   </Form.Group>
                   <div className="text-center">
                     <Button variant="primary" type="submit">Submit</Button>
-                  </div>
-                </Form>
-                {showAlert && (
+                    {showAlert && (
                   <Alert variant="success" className="mt-4">
                     Thank you for your review!
                   </Alert>
                 )}
+                  </div>
+                </Form>
               </Card.Body>
             </Card>
           </Col>

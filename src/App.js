@@ -5,6 +5,7 @@ import AboutUs from './AboutUs';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Home';
 import ThisGame from './ThisGame';
+import Cart from './Cart';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/games" element={<Games />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route exact path={"/thisgame"} element={<ThisGame/>}></Route>
+          <Route exact path="/cart" element={<Cart/>}> </Route>
         </Routes>
       </Router>
     </div>

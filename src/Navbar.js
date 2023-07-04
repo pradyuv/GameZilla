@@ -1,11 +1,28 @@
-import React from 'react';
-import { Navbar, Nav, Form, FormControl, Button, Container, NavDropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { IoMdSearch } from 'react-icons/io'; // Import the search icon from the Ionicons icon library
+import React, { useState, useEffect } from 'react';
+import { Navbar, Nav, Button, Container, NavDropdown } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa'; // Import the shopping cart icon from the FontAwesome icon library
-import './Navbar.css'
+import './Navbar.css';
 
 const NavigationBar = () => {
+  const [cartItemsCount, setCartItemsCount] = useState(0); //state func to set cart
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; //using local storage to manage cart 
+    const totalItemsCount = cartItems.reduce((count, item) => count + item.quantity, 0);
+    setCartItemsCount(totalItemsCount);
+  }, []);
+
+  const handleClearCart = () => {
+    localStorage.removeItem('cartItems');
+    setCartItemsCount(0);
+  };
+
+  const handleCartClick = () => {
+    navigate('/cart');
+  };
+
   return (
     <Navbar className='bg-black navbar-dark'>
       <Container fluid className="d-flex justify-content-between align-items-center ml-0">
@@ -34,25 +51,19 @@ const NavigationBar = () => {
           </NavDropdown>
         </Nav>
         <div className="d-flex">
-          {/* <Form inline className="mr-2 p-3">
-            <div className="position-relative">
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2 search-input"
-              />
-              <Button variant="outline-light" className="search-button">
-                <IoMdSearch size={20} />
-              </Button>
-            </div>
-          </Form> */}
-          <Button variant="success" className='mt-3' style={{ padding: '8px', width: '40px', height: '40px' }}>
+          <Button variant="success" className='mt-3' style={{ padding: '8px', width: '40px', height: '40px' }} onClick={handleCartClick}>
             <FaShoppingCart size={20} />
+            {cartItemsCount > 0 && (
+              <span className="cart-item-count">{cartItemsCount}</span>
+            )}
+          </Button>
+          <Button variant="danger" className='mt-3 ml-2' onClick={handleClearCart}>
+            Clear Cart
           </Button>
         </div>
       </Container>
     </Navbar>
   );
-}
+};
 
 export default NavigationBar;
