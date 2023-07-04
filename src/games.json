@@ -28,6 +28,13 @@
         "price": "$69.99",
         "imagePath": "/images/dyinglight2.jpg",
         "genre":"Open World, Zombie"
+      },
+      {
+        "name": "Doom Eternal",
+        "description": "Doom Eternal is a fast-paced first-person shooter game where players battle against hordes of demons in a relentless and intense fight for survival.",
+        "price": "$69.99",
+        "imagePath": "/images/doometernal.jpg",
+        "genre":"FPS, Action RPG"
       }
     ]
   }
