@@ -37,9 +37,9 @@ const Cart = () => {
             <div>
               {cartItems.map((item, index) => (
                 <div key={index}>
-                  <h4>{item.title}</h4>
+                  <h4>{item.name}</h4>
                   <p>Quantity: {item.quantity}</p>
-                  <p>Price: {item.price * item.quantity}</p>
+                  <p>Price: {parseFloat(item.price)}</p> {/* Display the item price directly */}
                   <button onClick={() => handleRemoveItem(index)}>Remove</button>
                 </div>
               ))}
