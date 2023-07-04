@@ -42,6 +42,13 @@
         "price": "$59.99",
         "imagePath": "/images/cyberpunk2077.jpg",
         "genre":"FPS, Open World"
+      },
+      {
+        "name": "Total War: Warhammer 3",
+        "description": "Warhammer 3 is an epic turn-based strategy game set in the fantasy world of Warhammer, where players engage in massive battles and lead diverse armies to conquer and shape the fate of a war-torn realm.",
+        "price": "$59.99",
+        "imagePath": "/images/warhammer3.jpg",
+        "genre":"Strategy"
       }
       
 

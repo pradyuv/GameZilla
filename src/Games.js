@@ -40,7 +40,7 @@ function Games() {
     ));
   };
 
-  const genres = ['Action RPG', 'FPS', 'Open World', 'Zombie'];
+  const genres = ['Action RPG', 'FPS', 'Open World', 'Zombie' , 'Strategy'];
 
   return (
     <>
