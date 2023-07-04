@@ -3,14 +3,14 @@
       {
         "name": "Diablo IV",
         "description": "Diablo IV is an action role-playing game developed and published by Blizzard Entertainment.",
-        "price": "$49.99",
+        "price": "$79.99",
         "imagePath": "/images/firstcarousel.jpg",
         "genre":"Action RPG"
       },
       {
         "name": "Destiny 2: Lightfall",
         "description": "Destiny 2: Lightfall is the newest expansion in the popular multiplayer first-person shooter game Destiny 2.",
-        "price": "$49.99",
+        "price": "$69.99",
         "imagePath": "/images/secondcarousel.jpg",
         "genre":"FPS"
         
@@ -18,9 +18,16 @@
       {
         "name": "Elden Ring",
         "description": "Elden Ring is an open world action role-playing game developed by FromSoftware and published by Bandai Namco Entertainment.",
-        "price": "$49.99",
+        "price": "$79.99",
         "imagePath": "/images/thirdcarousel.jpg",
         "genre":"Open World, Action RPG"
+      },
+      {
+        "name": "Dying Light 2",
+        "description": "Dying Light 2 is an open-world survival horror game where players navigate a post-apocalyptic city filled with zombies, making crucial choices that shape the story and the fate of the city's inhabitants.",
+        "price": "$69.99",
+        "imagePath": "/images/dyinglight2.jpg",
+        "genre":"Open World, Zombie"
       }
     ]
   }
