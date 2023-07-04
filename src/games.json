@@ -56,6 +56,13 @@
         "price": "$49.99",
         "imagePath": "/images/civ6.jpg",
         "genre":"Strategy"
+      },
+      {
+        "name": "Red Dead Redemption 2",
+        "description": "Red Dead Redemption 2 is an immersive open-world action-adventure game set in the Old West, following the story of an outlaw as he navigates a vast and stunningly detailed world filled with dynamic characters and engaging gameplay.",
+        "price": "$59.99",
+        "imagePath": "/images/rdr2.jpg",
+        "genre":"Open World"
       }
       
 
