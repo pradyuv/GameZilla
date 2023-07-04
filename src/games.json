@@ -35,7 +35,16 @@
         "price": "$69.99",
         "imagePath": "/images/doometernal.jpg",
         "genre":"FPS, Action RPG"
+      },
+      {
+        "name": "Cyberpunk 2077",
+        "description": "Cyberpunk 2077 is a futuristic open-world RPG where players immerse themselves in a dystopian city, embracing cybernetic enhancements and navigating a complex narrative filled with intrigue and moral choices.",
+        "price": "$59.99",
+        "imagePath": "/images/cyberpunk2077.jpg",
+        "genre":"FPS, Open World"
       }
+      
+
     ]
   }
   
