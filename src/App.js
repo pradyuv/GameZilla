@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Home';
 import ThisGame from './ThisGame';
 import Cart from './Cart';
+import Checkout from './Checkout';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route exact path={"/thisgame"} element={<ThisGame/>}></Route>
           <Route exact path="/cart" element={<Cart/>}> </Route>
+          <Route exact path="/checkout" element={<Checkout />} />
         </Routes>
       </Router>
     </div>

@@ -17,6 +17,7 @@ const NavigationBar = () => {
   const handleClearCart = () => {
     localStorage.removeItem('cartItems');
     setCartItemsCount(0);
+    navigate('/');
   };
 
   const handleCartClick = () => {

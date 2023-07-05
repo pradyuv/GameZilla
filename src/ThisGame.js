@@ -51,7 +51,7 @@ function ThisGame() {
       localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     } else {
       // If the item doesn't exist in the cart, add it with a quantity of 1
-      const newItem = { ...gameInfo, quantity: 1 };
+      const newItem = { ...gameInfo, quantity: 1, imagePath: gameImagePath || imagePath };
       const updatedCartItems = [...cartItems, newItem];
       localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     }
