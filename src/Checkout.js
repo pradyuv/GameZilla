@@ -30,7 +30,7 @@ const Checkout = () => {
     const creditCardNumber = document.getElementById('creditCardNumber').value;
     const expiryDate = document.getElementById('expiryDate').value;
     const cvvCode = document.getElementById('cvvCode').value;
-
+  
     // Prepare data for confirmation page
     const checkoutData = {
       fullName,
@@ -45,10 +45,11 @@ const Checkout = () => {
       cvvCode,
       totalPrice: getTotalPrice(),
     };
-
+  
     // Navigate to confirmation page
-    navigate('/confirm', { state: {checkoutData} });
+    navigate('/confirm', { state: { checkoutData, cartItems } });
   };
+  
 
 
 
