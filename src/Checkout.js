@@ -1,11 +1,12 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import NavigationBar from './Navbar';
 import Footer from './Footer';
 
 const Checkout = () => {
   const location = useLocation();
   const cartItems = location.state.cartItems || [];
+  const navigate = useNavigate();
 
   const getTotalPrice = () => {
     const totalPrice = cartItems.reduce((total, item) => {
@@ -16,6 +17,40 @@ const Checkout = () => {
 
     return totalPrice.toFixed(2);
   };
+
+  const handlePayNow = () => {
+    // Gather form data
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const address = document.getElementById('address').value;
+    const city = document.getElementById('city').value;
+    const postalCode = document.getElementById('postalCode').value;
+    const province = document.getElementById('province').value;
+    const country = document.getElementById('country').value;
+    const creditCardNumber = document.getElementById('creditCardNumber').value;
+    const expiryDate = document.getElementById('expiryDate').value;
+    const cvvCode = document.getElementById('cvvCode').value;
+
+    // Prepare data for confirmation page
+    const checkoutData = {
+      fullName,
+      email,
+      address,
+      city,
+      postalCode,
+      province,
+      country,
+      creditCardNumber,
+      expiryDate,
+      cvvCode,
+      totalPrice: getTotalPrice(),
+    };
+
+    // Navigate to confirmation page
+    navigate('/confirm', { state: {checkoutData} });
+  };
+
+
 
   return (
     <div className="d-flex flex-column min-vh-100 bg-dark text-white">
@@ -77,6 +112,13 @@ const Checkout = () => {
         <div className="row">
           <div className="col">
             <h4>Total Cost: ${getTotalPrice()}</h4>
+          </div>
+        </div>
+        <div className="row justify-content-center mt-4">
+          <div className="col-md-6 text-center">
+            <button className="btn btn-success btn-lg" onClick={handlePayNow}>
+              Pay Now
+            </button>
           </div>
         </div>
       </div>
