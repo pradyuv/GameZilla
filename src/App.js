@@ -7,6 +7,7 @@ import Home from './Home';
 import ThisGame from './ThisGame';
 import Cart from './Cart';
 import Checkout from './Checkout';
+import Confirm from './Confirm';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route exact path={"/thisgame"} element={<ThisGame/>}></Route>
           <Route exact path="/cart" element={<Cart/>}> </Route>
           <Route exact path="/checkout" element={<Checkout />} />
+          <Route exact path="/confirm" element={<Confirm />} />
         </Routes>
       </Router>
     </div>
