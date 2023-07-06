@@ -42,8 +42,10 @@ const NavigationBar = () => {
           </Nav.Link>
           <NavDropdown title="Genres" id="navbar-dropdown" className='text-white'>
             <NavDropdown.Item href="/option1">Action RPG</NavDropdown.Item>
-            <NavDropdown.Item href="/option2">Open World</NavDropdown.Item>
-            <NavDropdown.Item href="/option3">FPS</NavDropdown.Item>
+            <NavDropdown.Item href="/option2">FPS</NavDropdown.Item>
+            <NavDropdown.Item href="/option3">Open World</NavDropdown.Item>
+            <NavDropdown.Item href="/option4">Zombie</NavDropdown.Item>
+            <NavDropdown.Item href="/option5">Strategy</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="Platforms" id="navbar-dropdown" className='text-white'>
             <NavDropdown.Item href="/option1">PC</NavDropdown.Item>
