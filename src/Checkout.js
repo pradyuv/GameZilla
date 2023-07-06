@@ -45,6 +45,9 @@ const Checkout = () => {
       cvvCode,
       totalPrice: getTotalPrice(),
     };
+
+    // Remove cartItems from local storage
+  localStorage.removeItem('cartItems');
   
     // Navigate to confirmation page
     navigate('/confirm', { state: { checkoutData, cartItems } });
