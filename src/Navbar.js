@@ -47,11 +47,9 @@ const NavigationBar = () => {
             <NavDropdown.Item href="/option4">Zombie</NavDropdown.Item>
             <NavDropdown.Item href="/option5">Strategy</NavDropdown.Item>
           </NavDropdown>
-          <NavDropdown title="Platforms" id="navbar-dropdown" className='text-white'>
-            <NavDropdown.Item href="/option1">PC</NavDropdown.Item>
-            <NavDropdown.Item href="/option2">PS5</NavDropdown.Item>
-            <NavDropdown.Item href="/option3">Xbox Series X</NavDropdown.Item>
-          </NavDropdown>
+          <Nav.Link as={Link} to="/faq" id="navbar-item" className='text-white'>
+            FAQ
+          </Nav.Link>
         </Nav>
         <div className="d-flex">
           <Button variant="success" className='mt-3' style={{ padding: '8px', width: '40px', height: '40px' }} onClick={handleCartClick}>

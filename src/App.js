@@ -8,6 +8,7 @@ import ThisGame from './ThisGame';
 import Cart from './Cart';
 import Checkout from './Checkout';
 import Confirm from './Confirm';
+import FAQ from './faq';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/games" element={<Games />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/faq" element={<FAQ/>} />
           <Route exact path={"/thisgame"} element={<ThisGame/>}></Route>
           <Route exact path="/cart" element={<Cart/>}> </Route>
           <Route exact path="/checkout" element={<Checkout />} />
