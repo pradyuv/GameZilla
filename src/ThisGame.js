@@ -16,6 +16,10 @@ function ThisGame() {
   const [showErrorAlert, setShowErrorAlert] = useState(false);
   const [review, setReview] = useState('');
 
+  let alertTimer;
+  let errorAlertTimer;
+
+
   useEffect(() => {
     if (!name || !imagePath) {
       console.log('name:', name);
@@ -29,6 +33,12 @@ function ThisGame() {
         alert("Game not found in the database!");
       }
     }
+
+    return () => {
+      // Cleanup function to clear the alert timers
+      clearTimeout(alertTimer);
+      clearTimeout(errorAlertTimer);
+    };
   }, [name, imagePath]);
 
   const { description, price, imagePath: gameImagePath } = gameInfo || {};
@@ -38,10 +48,13 @@ function ThisGame() {
     if (review.trim() === '') {
      // If the review field is empty, show an error alert and return
        setShowErrorAlert(true);
+       errorAlertTimer = setTimeout(() => {
+        setShowErrorAlert(false);
+      }, 3000);
       return;
     }
     setShowAlert(true);
-    setTimeout(() => {
+    alertTimer = setTimeout(() => {
       setShowAlert(false);
       navigate('/');
     }, 3000);
