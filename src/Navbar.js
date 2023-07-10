@@ -6,6 +6,7 @@ import './Navbar.css';
 
 const NavigationBar = () => {
   const [cartItemsCount, setCartItemsCount] = useState(0);
+  const [isFrench, setIsFrench] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -34,6 +35,10 @@ const NavigationBar = () => {
     };
   };
 
+  const handleLanguageToggle = () => {
+    setIsFrench(!isFrench);
+  };
+
   return (
     <Navbar className='bg-black navbar-dark'>
       <Container fluid className="d-flex justify-content-between align-items-center ml-0">
@@ -41,24 +46,34 @@ const NavigationBar = () => {
           <img className="logo-image" src="images/GameZillalogo.jpg" alt="GameZilla Logo" style={{ width: '100px', height: '90px' }} />
         </Navbar.Brand>
         <Nav className="ml-auto">
-          <Nav.Link as={Link} to="/" id="navbar-first-item" className='text-white'>
-            Home
+          <Nav.Link as={Link} to="/" id="navbar-first-item" className={`text-white ${isFrench ? 'french-text' : ''}`}>
+            {isFrench ? 'Accueil' : 'Home'}
           </Nav.Link>
-          <Nav.Link as={Link} to="/Games" id="navbar-item" className='text-white'>
-            Games
+          <Nav.Link as={Link} to="/Games" id="navbar-item" className={`text-white ${isFrench ? 'french-text' : ''}`}>
+            {isFrench ? 'Jeux' : 'Games'}
           </Nav.Link>
-          <Nav.Link as={Link} to="/AboutUs" id="navbar-item" className='text-white'>
-            About Us
+          <Nav.Link as={Link} to="/AboutUs" id="navbar-item" className={`text-white ${isFrench ? 'french-text' : ''}`}>
+            {isFrench ? 'À Propos' : 'About Us'}
           </Nav.Link>
-          <NavDropdown title="Genres" id="navbar-dropdown" className='text-white'>
-            <NavDropdown.Item as={Link} to={getGenreLink('Action RPG')}>Action RPG</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to={getGenreLink('FPS')}>FPS</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to={getGenreLink('Open World')}>Open World</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to={getGenreLink('Zombie')}>Zombie</NavDropdown.Item>
-            <NavDropdown.Item as={Link} to={getGenreLink('Strategy')}>Strategy</NavDropdown.Item>
+          <NavDropdown title={isFrench ? 'Genres' : 'Genres'} id="navbar-dropdown" className={`text-white ${isFrench ? 'french-text' : ''}`}>
+            <NavDropdown.Item as={Link} to={getGenreLink('Action RPG')}>
+              {isFrench ? 'Action RPG' : 'Action RPG'}
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={getGenreLink('FPS')}>
+              {isFrench ? 'FPS' : 'FPS'}
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={getGenreLink('Open World')}>
+              {isFrench ? 'Open World' : 'Open World'}
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={getGenreLink('Zombie')}>
+              {isFrench ? 'Zombie' : 'Zombie'}
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={getGenreLink('Strategy')}>
+              {isFrench ? 'Stratégie' : 'Strategy'}
+            </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link as={Link} to="/faq" id="navbar-item" className='text-white'>
-            FAQ
+          <Nav.Link as={Link} to="/faq" id="navbar-item" className={`text-white ${isFrench ? 'french-text' : ''}`}>
+            {isFrench ? 'FAQ' : 'FAQ'}
           </Nav.Link>
         </Nav>
         <div className="d-flex">
@@ -69,7 +84,10 @@ const NavigationBar = () => {
             )}
           </Button>
           <Button variant="danger" className='mt-3 ml-2' onClick={handleClearCart}>
-            Clear Cart
+            {isFrench ? 'Vider le Panier' : 'Clear Cart'}
+          </Button>
+          <Button variant="outline-light" className='mt-3 ml-2' onClick={handleLanguageToggle}>
+            {isFrench ? 'English' : 'Français'}
           </Button>
         </div>
       </Container>
