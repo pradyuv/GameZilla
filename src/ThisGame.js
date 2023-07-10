@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Card, Button, Form, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Form, Alert, Carousel } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import NavigationBar from './Navbar';
 import Footer from './Footer';
@@ -139,18 +139,22 @@ function ThisGame() {
                     )}
                     {showAlert && !showErrorAlert && (
                       <Alert variant="success" className="mt-4">
-                        Thank you for your review!
+                        You review will be submitted for proper moderation, thank you!
                       </Alert>
                     )}
                   </div>
                 </Form>
-                {reviews.map((review, index) => (
-                  <div key={index} className="mt-4">
-                    <Card.Text className="text-white text-center">
-                      <strong>{review.username}</strong>: {review.comment}
-                    </Card.Text>
-                  </div>
-                ))}
+                <Carousel className="mt-4 pt-4 p-5">
+                  {reviews.map((review, index) => (
+                    <Carousel.Item key={index}>
+                      <Card className="text-center" style={{ backgroundColor: '#343a40', padding: '10px', borderRadius: '10px' }}>
+                        <Card.Text className="text-white">
+                          <strong>{review.username}</strong>: {review.comment}
+                        </Card.Text>
+                      </Card>
+                    </Carousel.Item>
+                  ))}
+                </Carousel>
               </Card.Body>
             </Card>
           </Col>
