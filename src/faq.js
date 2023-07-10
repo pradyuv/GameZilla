@@ -1,9 +1,9 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationBar from './Navbar';
 import Footer from './Footer';
-import { Collapse, Button } from 'antd';
+import { Collapse} from 'antd';
 import './FAQ.css'; // Import the custom CSS file
 
 const { Panel } = Collapse;
@@ -31,7 +31,7 @@ function FAQ() {
               </Panel>
               <Panel header={<h6 className="text-white">What platforms are the games on GameZilla available for?</h6>} key="3" className="text-white">
                 <p>
-                GameZilla offers games for various platforms, including PC, PlayStation, Xbox, and Nintendo Switch. Each game listing on our website is compatible with all current modern platforms, save the Nintendo Switch (only some), so you can easily find games that are playable on your preferred gaming system.
+                GameZilla offers games for various platforms, including PC, PlayStation, and Xbox. Each game listing on our website is compatible with all current modern platforms, save the Nintendo Switch (only some), so you can easily find games that are playable on your preferred gaming system.
                 </p>
               </Panel>
               <Panel header={<h6 className="text-white">How often does GameZilla update its game collection?</h6>} key="4" className="text-white">
@@ -46,7 +46,7 @@ function FAQ() {
               </Panel>
               <Panel header={<h6 className="text-white">How can I contact GameZilla for support or further assistance?</h6>} key="6" className="text-white">
                 <p>
-                We're here to help! If you have any questions, need assistance, or require support, you can reach out to our dedicated customer service team. You can contact us via email, phone, or through the contact form on our website. We take pride in offering prompt and friendly customer support to ensure your gaming experience with GameZilla is enjoyable and hassle-free.
+                We're here to help! If you have any questions, need assistance, or require support, you can reach out to our dedicated customer service team. You can contact us via email or phone! We take pride in offering prompt and friendly customer support to ensure your gaming experience with GameZilla is enjoyable and hassle-free.
                 </p>
               </Panel>
             </Collapse>
