@@ -13,6 +13,8 @@ function ThisGame() {
 
   const [gameInfo, setGameInfo] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
+  const [review, setReview] = useState('');
 
   useEffect(() => {
     if (!name || !imagePath) {
@@ -33,6 +35,11 @@ function ThisGame() {
 
   const handleReviewSubmit = (event) => {
     event.preventDefault();
+    if (review.trim() === '') {
+     // If the review field is empty, show an error alert and return
+       setShowErrorAlert(true);
+      return;
+    }
     setShowAlert(true);
     setTimeout(() => {
       setShowAlert(false);
@@ -93,18 +100,31 @@ function ThisGame() {
                   <FaShoppingCart size={20} />
                 </Button>
                 <Form className="mt-4" onSubmit={handleReviewSubmit}>
-                  <Form.Group controlId="reviewForm">
-                    <Form.Label>Leave a review:</Form.Label>
-                    <Form.Control as="textarea" rows={3} placeholder="Write your review here" />
-                  </Form.Group>
-                  <div className="text-center">
-                    <Button variant="primary" type="submit">Submit</Button>
-                    {showAlert && (
-                  <Alert variant="success" className="mt-4">
-                    Thank you for your review!
-                  </Alert>
-                )}
-                  </div>
+          <Form.Group controlId="reviewForm">
+            <Form.Label>Leave a review:</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={3}
+              placeholder="Write your review here"
+              value={review}
+              onChange={(event) => setReview(event.target.value)}
+            />
+          </Form.Group>
+          <div className="text-center">
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+            {showErrorAlert && (
+              <Alert variant="danger" className="mt-4">
+                Please write your review before submitting.
+              </Alert>
+            )}
+            {showAlert && !showErrorAlert && (
+              <Alert variant="success" className="mt-4">
+                Thank you for your review!
+              </Alert>
+            )}
+          </div>
                 </Form>
               </Card.Body>
             </Card>
