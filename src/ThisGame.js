@@ -39,7 +39,7 @@ function ThisGame() {
       clearTimeout(alertTimer);
       clearTimeout(errorAlertTimer);
     };
-  }, [name, imagePath]);
+  }, [name, imagePath, alertTimer, errorAlertTimer]);
 
   const { description, price, imagePath: gameImagePath } = gameInfo || {};
 
