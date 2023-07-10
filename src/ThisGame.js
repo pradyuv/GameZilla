@@ -5,6 +5,7 @@ import NavigationBar from './Navbar';
 import Footer from './Footer';
 import { FaShoppingCart } from 'react-icons/fa';
 import gamesData from './games.json';
+import reviewsData from './reviews.json';
 
 function ThisGame() {
   const location = useLocation();
@@ -15,22 +16,22 @@ function ThisGame() {
   const [showAlert, setShowAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
   const [review, setReview] = useState('');
+  const [reviews, setReviews] = useState([]);
 
   let alertTimer;
   let errorAlertTimer;
-
 
   useEffect(() => {
     if (!name || !imagePath) {
       console.log('name:', name);
       console.log('imagePath:', imagePath);
-      alert("Game information not passed correctly");
+      alert('Game information not passed correctly');
     } else {
       const game = gamesData.games.find((game) => game.name === name);
       if (game) {
         setGameInfo(game);
       } else {
-        alert("Game not found in the database!");
+        alert('Game not found in the database!');
       }
     }
 
@@ -39,16 +40,20 @@ function ThisGame() {
       clearTimeout(alertTimer);
       clearTimeout(errorAlertTimer);
     };
-  }, [name, imagePath, alertTimer, errorAlertTimer]);
+  }, [name, imagePath]);
+
+  useEffect(() => {
+    setReviews(reviewsData.reviews);
+  }, []);
 
   const { description, price, imagePath: gameImagePath } = gameInfo || {};
 
   const handleReviewSubmit = (event) => {
     event.preventDefault();
     if (review.trim() === '') {
-     // If the review field is empty, show an error alert and return
-       setShowErrorAlert(true);
-       errorAlertTimer = setTimeout(() => {
+      // If the review field is empty, show an error alert and return
+      setShowErrorAlert(true);
+      errorAlertTimer = setTimeout(() => {
         setShowErrorAlert(false);
       }, 3000);
       return;
@@ -62,7 +67,7 @@ function ThisGame() {
 
   const handleAddToCart = () => {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const existingItemIndex = cartItems.findIndex(item => item.name === gameInfo.name);
+    const existingItemIndex = cartItems.findIndex((item) => item.name === gameInfo.name);
 
     if (existingItemIndex !== -1) {
       // If the item already exists in the cart, update the quantity
@@ -71,7 +76,11 @@ function ThisGame() {
       localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     } else {
       // If the item doesn't exist in the cart, add it with a quantity of 1
-      const newItem = { ...gameInfo, quantity: 1, imagePath: gameImagePath || imagePath };
+      const newItem = {
+        ...gameInfo,
+        quantity: 1,
+        imagePath: gameImagePath || imagePath,
+      };
       const updatedCartItems = [...cartItems, newItem];
       localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     }
@@ -97,12 +106,8 @@ function ThisGame() {
             <Card className="bg-dark">
               <Card.Body className="d-flex flex-column align-items-center justify-content-between">
                 <div>
-                  <Card.Text className="text-white text-center">
-                    {description}
-                  </Card.Text>
-                  <Card.Text className="text-white text-center">
-                    Price: {price}
-                  </Card.Text>
+                  <Card.Text className="text-white text-center">{description}</Card.Text>
+                  <Card.Text className="text-white text-center">Price: {price}</Card.Text>
                 </div>
                 <Button
                   variant="success"
@@ -113,32 +118,39 @@ function ThisGame() {
                   <FaShoppingCart size={20} />
                 </Button>
                 <Form className="mt-4" onSubmit={handleReviewSubmit}>
-          <Form.Group controlId="reviewForm">
-            <Form.Label>Leave a review:</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={3}
-              placeholder="Write your review here"
-              value={review}
-              onChange={(event) => setReview(event.target.value)}
-            />
-          </Form.Group>
-          <div className="text-center">
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-            {showErrorAlert && (
-              <Alert variant="danger" className="mt-4">
-                Please write your review before submitting.
-              </Alert>
-            )}
-            {showAlert && !showErrorAlert && (
-              <Alert variant="success" className="mt-4">
-                Thank you for your review!
-              </Alert>
-            )}
-          </div>
+                  <Form.Group controlId="reviewForm">
+                    <Form.Label>Leave a review:</Form.Label>
+                    <Form.Control
+                      as="textarea"
+                      rows={3}
+                      placeholder="Write your review here"
+                      value={review}
+                      onChange={(event) => setReview(event.target.value)}
+                    />
+                  </Form.Group>
+                  <div className="text-center">
+                    <Button variant="primary" type="submit">
+                      Submit
+                    </Button>
+                    {showErrorAlert && (
+                      <Alert variant="danger" className="mt-4">
+                        Please write your review before submitting.
+                      </Alert>
+                    )}
+                    {showAlert && !showErrorAlert && (
+                      <Alert variant="success" className="mt-4">
+                        Thank you for your review!
+                      </Alert>
+                    )}
+                  </div>
                 </Form>
+                {reviews.map((review, index) => (
+                  <div key={index} className="mt-4">
+                    <Card.Text className="text-white text-center">
+                      <strong>{review.username}</strong>: {review.comment}
+                    </Card.Text>
+                  </div>
+                ))}
               </Card.Body>
             </Card>
           </Col>
@@ -150,3 +162,4 @@ function ThisGame() {
 }
 
 export default ThisGame;
+

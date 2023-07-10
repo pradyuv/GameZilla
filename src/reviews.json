@@ -1,0 +1,18 @@
+{
+    "reviews": [
+      {
+        "username": "John",
+        "comment": "Great game!"
+      },
+      {
+        "username": "Jane",
+        "comment": "I love it!"
+      },
+      {
+        "username": "Mark",
+        "comment": "This game sucks!"
+      }
+      
+    ]
+  }
+  
