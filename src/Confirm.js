@@ -30,9 +30,6 @@ const Confirm = () => {
             <p><strong>Postal Code:</strong> {checkoutData.postalCode}</p>
             <p><strong>Province:</strong> {checkoutData.province}</p>
             <p><strong>Country:</strong> {checkoutData.country}</p>
-            <p><strong>Credit Card Number:</strong> {checkoutData.creditCardNumber}</p>
-            <p><strong>Expiry Date:</strong> {checkoutData.expiryDate}</p>
-            <p><strong>CVV Code:</strong> {checkoutData.cvvCode}</p>
             <p><strong>Total Cost:</strong> ${checkoutData.totalPrice}</p>
           </div>
         </div>
