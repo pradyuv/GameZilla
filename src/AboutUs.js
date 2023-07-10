@@ -46,6 +46,30 @@ function AboutUs() {
                 </Card.Text>
               </Card.Body>
             </Card>
+            <Card className="bg-dark">
+              <Card.Body className="d-flex align-items-center justify-content-center">
+                <Card.Text className="text-white text-center">
+                <p>
+                Chez GameZilla, nous sommes passionnés de vous offrir la meilleure expérience de jeu. Nous pensons que les jeux ont le pouvoir d'inspirer, de divertir et de connecter des personnes de tous horizons. Notre mission est de créer un refuge pour les joueurs, où ils peuvent découvrir de nouvelles aventures, s'immerger dans des mondes captivants et se forger des souvenirs inoubliables.
+        </p>
+        <p>
+        En tant que petit magasin de jeux indépendant, nous sommes fiers de proposer une sélection variée de jeux de différents genres et plates-formes. Que vous soyez un joueur occasionnel, un passionné chevronné ou quelqu'un qui cherche à explorer le domaine du jeu pour la première fois, nous avons quelque chose pour tout le monde. Notre équipe dévouée sélectionne soigneusement chaque titre, en veillant à ce qu'il réponde à nos normes de qualité, d'innovation et de valeur de divertissement.
+        </p>
+        <p>
+        Chez GameZilla, nous croyons en la promotion d'un sentiment de communauté. Nous comprenons que le jeu ne concerne pas seulement les jeux eux-mêmes, mais également les connexions et les amitiés qui peuvent être formées grâce à des expériences partagées. C'est pourquoi nous organisons régulièrement des événements de jeu, des tournois et des rencontres où les joueurs peuvent se réunir, partager leur passion et forger de nouveaux liens.
+        </p>
+        <p>
+        La satisfaction du client est au cœur de tout ce que nous faisons. Notre personnel amical et compétent est toujours prêt à vous aider à trouver le jeu parfait ou à vous fournir des recommandations en fonction de vos préférences. Nous nous efforçons de créer un environnement accueillant et inclusif où les joueurs de tous horizons se sentent à l'aise et soutenus.
+        </p>
+        <p>
+        Nous apprécions également votre commodité. En plus de notre magasin physique, nous offrons une plateforme en ligne facile à utiliser où vous pouvez parcourir notre catalogue, faire des achats et faire livrer vos jeux directement à votre porte. Nous voulons rendre votre expérience de jeu aussi transparente et agréable que possible.
+        </p>
+        <p>
+        Merci d'avoir choisi GameZilla comme magasin de jeux incontournable. Nous sommes honorés de faire partie de votre parcours de jeu et nous sommes impatients de vous servir avec les dernières versions, un service client exceptionnel et une passion pour tout ce qui touche au jeu.
+        </p>
+                </Card.Text>
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
       </Container>
