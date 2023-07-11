@@ -6,8 +6,8 @@ import Footer from './Footer';
 const Confirm = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const  checkoutData = location.state;
-  const cartItems = location.state.cartItems;
+  const checkoutData = location.state.checkoutData; // Access checkout data 
+  const cartItems = location.state.cartItems; //Access cart items
 
   const handleReturnHome = () => {
     navigate('/');
@@ -35,20 +35,19 @@ const Confirm = () => {
         </div>
         <h3 className="mt-4">Games:</h3>
         {cartItems.map((item, index) => (
-  <div key={index} className="card mb-3">
-    <div className="row g-0">
-      <div className="col-md-4">
-        <img src={item.imagePath} alt={item.name} className="img-fluid" />
-      </div>
-      <div className="col-md-8">
-        <div className="card-body">
-          <h5 className="card-title">{item.name}</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-))}
-
+          <div key={index} className="card mb-3 bg-dark text-white">
+            <div className="row g-0">
+              <div className="col-md-4">
+                <img src={item.imagePath} alt={item.name} className="img-fluid" />
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">{item.name}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
         <div className="text-center mt-4">
           <button className="btn btn-primary" onClick={handleReturnHome}>Return to Home</button>
         </div>
