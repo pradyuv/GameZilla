@@ -11,6 +11,7 @@ function AboutUs() {
     <div className="bg-dark">
       <NavigationBar />
       <Container fluid className="vh-100 d-flex flex-column">
+      <h1 className="text-white align-self-start mx-auto pt-3">About Us/À propos de nous</h1>
         <Row className="flex-grow-1 overflow-auto">
           <Col>
             <Card className="bg-dark">
