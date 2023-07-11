@@ -59,6 +59,14 @@ function Home() {
               </Card.Body>
             </Card>
           </Col>
+              <Col>
+                <Card className="bg-dark text-white align-items-center justify-content-center">
+                  <Card.Body>
+                    <h4>Daily Featured Funko!</h4>
+                    <img className="d-block mx-auto" src="images/funko1.jpg" alt="Funko1" style={{ maxWidth: "300px" }} />
+                  </Card.Body>
+                </Card>
+              </Col>
         </Row>
       </Container>
       <Footer />
