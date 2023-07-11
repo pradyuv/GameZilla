@@ -18,6 +18,7 @@ function AboutUs() {
               <Card.Body className="d-flex flex-column align-items-center">
                 <div className="gamezilla-image-and-caption">
                 <img className="d-block w-100" src="images/GameZillalogo.jpg" alt="GameZillaLogo" />
+                <img className="d-block w-100" src="images/mangaming.jpg" alt="ManGamingonPC" />
                 </div>
               </Card.Body>
             </Card>
