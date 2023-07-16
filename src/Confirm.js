@@ -20,6 +20,7 @@ const Confirm = () => {
       <NavigationBar />
       <div className="flex-grow-1 container">
         <h1 className="text-center text-success mt-4 mb-5">Thank you for your purchase!</h1>
+        <img src='images/confirm.jpg' alt='confirmImage' style={{ width: '300px' }}/>
         <div className="card bg-info">
           <div className="card-body">
             <h3>Order Details:</h3>

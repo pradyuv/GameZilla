@@ -42,6 +42,7 @@ const Cart = () => {
       <NavigationBar />
       <div className="flex-grow-1 container">
         <h2 className="text-white text-center mb-4 pt-3">Cart</h2>
+        <img src='images/cart.jpg' alt='cartImage' style={{ width: '300px' }}/>
         {cartItems.length === 0 ? (
           <p>Your cart is empty.</p>
         ) : (

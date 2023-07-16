@@ -145,6 +145,7 @@ const Checkout = () => {
       <NavigationBar />
       <div className="flex-grow-1 container">
         <h2 className="text-white text-center mb-4 pt-3">Checkout</h2>
+        <img src='images/checkout.jpg' alt='checkoutImage' style={{ width: '300px' }}/>
         <div className="row">
           <div className="col-md-6">
             <h3>Customer Information</h3>
